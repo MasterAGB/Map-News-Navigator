@@ -12,9 +12,9 @@ The app consists of two primary activities:
 
 ## Screenshots
 
-![Screenshot1](Screenshot (1).jpg "Screenshot 1")
-![Screenshot2](Screenshot (2).jpg "Screenshot 2")
-![Screenshot3](Screenshot (3).jpg "Screenshot 3")
+![Screenshot1](Screenshot%20(1).jpg "Screenshot 1")
+![Screenshot2](Screenshot%20(2).jpg "Screenshot 2")
+![Screenshot3](Screenshot%20(3).jpg "Screenshot 3")
 
 
 
