@@ -1,49 +1,60 @@
-# Map-News-Navigator
+# Current Place Details on Map and News Fetcher
 
-Google Maps Android API Sample: Current Place Details
-=====================================================
+## Overview
 
-This sample goes hand in hand with a tutorial for the Google Maps Android API:
-[Select Current Place and Show Details on a Map](https://developers.google.com/maps/documentation/android-api/current-place-tutorial).
+This Android application provides two main features:
+1. Displaying a map that indicates the user's current location along with the option to explore nearby places.
+2. Fetching the latest news articles based on a predefined query using the NewsAPI.
 
-Prerequisites
---------------
+The app consists of two primary activities:
+- `MapsActivityCurrentPlace`: Displays the current location on the map and nearby places.
+- `NewsActivity`: Retrieves and displays news articles related to the query "tesla".
 
-- Android SDK v33
-- Latest Android Build Tools
-- Android Support Repository
-- Google Repository
-- Google Play Services
+## Features
 
-Getting started
----------------
+### Maps Activity
 
-This sample uses the Gradle build system.
+- Utilizes the Google Maps API to display the map.
+- Fetches the user's current location and displays it on the map.
+- Offers a list of likely places near the current location to choose from.
+- Custom information windows for map markers.
+- Polylines on the map to represent certain areas.
+- Location permission handling to ensure user privacy.
 
-1. Download the samples by cloning this repository or downloading an archived
-  snapshot. (See the options at the top of the page.)
-1. In Android Studio, create a new project and choose the "Import non-Android Studio project" or
-  "Import Project" option.
-1. Select the `CurrentPlaceDetailsOnMap` directory that you downloaded with this repository.
-1. If prompted for a gradle configuration, accept the default settings.
-  Alternatively use the `gradlew build` command to build the project directly.
+### News Activity
 
-This demo app requires that you add your own Google Maps API key. See [Get an API Key](../../../docs/GET_AN_API_KEY.md) for more instructions.
+- Uses Retrofit library to make network requests to the NewsAPI.
+- Fetches news articles from the past day about "tesla".
+- Parses JSON responses and updates the UI with the latest news articles.
+- Error handling for scenarios such as null responses or empty article lists.
 
-Support
--------
+## Technical Details
 
-- Stack Overflow: https://stackoverflow.com/questions/tagged/android+google-maps
+- Retrofit is used for making asynchronous API requests.
+- GsonConverterFactory handles the conversion of JSON to Java objects.
+- Custom ArrayAdapter (`NewsAdapter`) to populate a ListView with news articles.
+- Error logging for debugging API call issues.
+- NewsAPI interface defines the GET request parameters and endpoint for Retrofit.
+- Handling Android lifecycle by saving instance states.
 
-If you have discovered an issue with the Google Maps Android API v2, please see
-the resources here: https://developers.google.com/maps/documentation/android-api/support
+## Permissions
 
-If you've found an error in these samples, please file an issue:
-https://github.com/googlemaps/android-samples/issues
+- Internet Access: To fetch data from the NewsAPI and Google Maps.
+- Access Fine Location: To get the precise location for the Maps feature.
 
-![Analytics](https://ga-beacon.appspot.com/UA-12846745-20/android-samples-apidemos/readme?pixel)
+## API Keys
 
-License
--------
+- A valid Google Maps API key is required to use the mapping features.
+- A valid NewsAPI key is required to fetch news articles.
 
-Please refer to the [LICENSE](https://github.com/googlemaps/android-samples/blob/main/LICENSE) at the root of this repo.
+## Usage
+
+1. Ensure you have the required API keys set in your `BuildConfig` or as a resource.
+2. Compile and run the application on an Android device with API level 26 or higher.
+3. Grant location permissions when prompted to use the Maps feature.
+4. Access the news feature from the menu to see the latest articles.
+
+## Libraries
+
+- Retrofit 2: HTTP Client for Android and Java by Square.
+- Gson: A Java serialization/deserialization library to convert Java Objects into JSON and back.
