@@ -10,6 +10,14 @@ The app consists of two primary activities:
 - `MapsActivityCurrentPlace`: Displays the current location on the map and nearby places.
 - `NewsActivity`: Retrieves and displays news articles related to the query "tesla".
 
+## Screenshots
+
+![Screenshot1](Screenshot (1).jpg "Screenshot 1")
+![Screenshot2](Screenshot (2).jpg "Screenshot 2")
+![Screenshot3](Screenshot (3).jpg "Screenshot 3")
+
+
+
 ## Features
 
 ### Maps Activity
